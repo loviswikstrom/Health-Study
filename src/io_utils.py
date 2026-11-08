@@ -12,7 +12,7 @@ def load_data(path: str) -> pd.DataFrame:
     """
     Läser CSV-filen health_study_dataset
     """
-    df = pd.read_csv("health_study_dataset.csv")
+    df = pd.read_csv(path)
     missing = [c for c in REQUIRED if c not in df.columns] #för varje kolumn in så lägger vi in dom i missing
     if missing:
         raise ValueError(f"Missing columns: {missing}")
